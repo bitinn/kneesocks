@@ -9,9 +9,10 @@
 var socks = require('socksv5');
 var Agent = socks.HttpAgent;
 var http = require('http');
-var https = require('https');
+var TLS = require('tls');
 var url = require('url');
 
+// command line arguments: kneesocks 10001 10002
 var args = process.argv.slice(2);
 var opts = {
 	http: 10001
@@ -26,26 +27,21 @@ if (args[1]) {
 	opts.socks = args[1];
 }
 
+// agent with socks support
 var agent = new Agent({
 	proxyHost: '127.0.0.1'
 	, proxyPort: opts.socks
 	, auths: [ socks.auth.None() ]
 });
 
+// proxy http requests
 var server = http.createServer(function(req, res) {
-	var request;
-	if (req.url.indexOf('https') === 0) {
-		request = https.request;
-	} else {
-		request = http.request;
-	}
-
 	var options = url.parse(req.url);
 	options.method = req.method;
 	options.headers = req.headers;
 	options.agent = agent;
 
-	var proxy = request(options, function(result) {
+	var proxy = http.request(options, function(result) {
 		console.log('load:', req.url);
 		res.writeHead(result.statusCode, result.headers);
 
@@ -63,6 +59,16 @@ var server = http.createServer(function(req, res) {
 	req.pipe(proxy);
 });
 
+// proxy https requests
+server.on('connect', function(req, socket, head) {
+	socket.write('HTTP/1.1 200 Connection Established\r\n');
+	socket.write('Proxy-agent: Kneesocks\r\n');
+
+	// x.pipe(inputSocket);
+	// inputSocket.pipe(x);
+});
+
+// start proxy
 server.listen(opts.http);
 
 console.log('http proxy listening on port:', opts.http);
