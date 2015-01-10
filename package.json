@@ -1,0 +1,31 @@
+{
+  "name": "kneesocks",
+  "version": "0.1.0",
+  "description": "Convert SOCKS proxy into HTTP proxy",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/test.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitinn/kneesocks.git"
+  },
+  "keywords": [
+    "socks",
+    "proxy",
+    "http"
+  ],
+  "author": "David Frank",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bitinn/kneesocks/issues"
+  },
+  "dependencies": {
+    "socksv5": "0.0.4"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0",
+    "nodemon": "^1.2.1"
+  }
+}

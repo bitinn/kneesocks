@@ -26,3 +26,9 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+# OS files
+.DS_Store
+
+# Coveralls token files
+.coveralls.yml
