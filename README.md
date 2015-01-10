@@ -1,2 +1,5 @@
-# kneesocks
-Convert SOCKS proxy into HTTP proxy
+
+Kneesocks
+=========
+
+Convert SOCKS proxy into HTTP proxy (WIP)
