@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/test.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "report": "istanbul cover _mocha -- -R spec test/test.js",
+    "coverage": "istanbul cover _mocha --report lcovonly -- -R spec test/test.js && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,8 @@
   },
   "devDependencies": {
     "chai": "^1.10.0",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.5",
     "mocha": "^2.1.0",
     "nodemon": "^1.2.1"
   }
