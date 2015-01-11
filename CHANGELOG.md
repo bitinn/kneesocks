@@ -4,6 +4,10 @@ Changelog
 
 # 1.x release
 
+## v1.0.3
+
+- Enhance: raise agent.maxSockets to 20
+
 ## v1.0.2
 
 - Fix: package.json `bin` field
