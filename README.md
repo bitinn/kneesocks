@@ -42,7 +42,7 @@ To revert proxy config, use `npm config delete http` and `npm config delete http
 
 # Limit
 
-* Node v0.10 or above required
+* Node v0.11 or above required
 * Probably not the best solution for day-to-day browsing, due to lack of remote dns and websocket support.
 * If you don't mind building binaries, use [DeleGate](http://www.delegate.org/delegate/) or [Polipo](http://www.pps.univ-paris-diderot.fr/~jch/software/polipo/) instead.
 
