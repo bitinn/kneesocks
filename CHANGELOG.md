@@ -6,7 +6,7 @@ Changelog
 
 ## v1.0.1
 
-- Fix: node v0.11 requirement due to an existing bug :)
+- Fix: should be node v0.11 requirement due to an existing bug :)
 
 ## v1.0.0
 
