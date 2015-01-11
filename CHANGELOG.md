@@ -2,6 +2,14 @@
 Changelog
 =========
 
+# 1.x release
+
+## v1.0.0
+
+- Major: bump node requirement to v0.10
+- Fix: testcases
+
+
 # 0.1.x release
 
 ## v0.1.0

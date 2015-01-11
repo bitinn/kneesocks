@@ -1,6 +1,6 @@
 {
   "name": "kneesocks",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Put some nice SOCKS on your HTTP only program",
   "main": "index.js",
   "scripts": {
@@ -34,5 +34,8 @@
     "istanbul": "^0.3.5",
     "mocha": "^2.1.0",
     "nodemon": "^1.2.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
   }
 }
