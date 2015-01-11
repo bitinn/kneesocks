@@ -28,10 +28,9 @@ describe('kneesocks', function() {
 				socket.write('Content-Length: ' + Buffer.byteLength(body) + '\r\n');
 				socket.write(body + '\r\n');
 				socket.write('\r\n');
-				socket.end();
-			} else if (info.dstPort == 443) {
-				socket.end();
 			}
+
+			socket.end();
 		});
 		server.useAuth(Socks.auth.None());
 		server.listen(10002, '127.0.0.1', done);

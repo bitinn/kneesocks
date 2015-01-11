@@ -7,7 +7,6 @@ Changelog
 ## v1.0.0
 
 - Major: bump node requirement to v0.10
-- Fix: testcases
 
 
 # 0.1.x release
