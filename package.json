@@ -22,10 +22,14 @@
     "url": "https://github.com/bitinn/kneesocks/issues"
   },
   "dependencies": {
+    "debug": "^2.1.1",
     "socksv5": "0.0.4"
   },
   "devDependencies": {
+    "chai": "^1.10.0",
     "mocha": "^2.1.0",
-    "nodemon": "^1.2.1"
+    "nodemon": "^1.2.1",
+    "sinon": "^1.12.2",
+    "sinon-chai": "^2.6.0"
   }
 }
