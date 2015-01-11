@@ -39,6 +39,8 @@ Then you can set your npm config:
 
 To revert proxy config, use `npm config delete http` and `npm config delete https-proxy`.
 
+To debug, use `DEBUG=proxy kneesocks port1 port2`
+
 
 # Limit
 
