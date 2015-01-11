@@ -44,7 +44,7 @@ To debug, use `DEBUG=proxy kneesocks port1 port2`
 
 # Limit
 
-* Node v0.11 or above required
+* Node v0.10+ required (Node v0.11+ preferred).
 * Probably not the best solution for day-to-day browsing, due to lack of remote dns and websocket support.
 * If you don't mind building binaries, use [DeleGate](http://www.delegate.org/delegate/) or [Polipo](http://www.pps.univ-paris-diderot.fr/~jch/software/polipo/) instead.
 
