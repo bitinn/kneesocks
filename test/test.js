@@ -29,6 +29,8 @@ describe('kneesocks', function() {
 				socket.write(body + '\r\n');
 				socket.write('\r\n');
 				socket.end();
+			} else if (info.dstPort == 443) {
+				socket.end();
 			}
 		});
 		server.useAuth(Socks.auth.None());
@@ -64,13 +66,12 @@ describe('kneesocks', function() {
 
 	describe('proxy', function() {
 		it('should accept http request', function(done) {
-			this.timeout(5000);
 			proxy.start(function() {
 				var req = http.request({
 					host: '127.0.0.1'
 					, port: 10001
 					, method: 'GET'
-					, path: 'http://www.google.com/'
+					, path: 'http://localhost/'
 				}, function(res) {
 					expect(res.statusCode).to.equal(200);
 					proxy.stop(function() {
@@ -81,17 +82,22 @@ describe('kneesocks', function() {
 			});
 		});
 
-		it('should accept connect request', function(done) {
-			this.timeout(5000);
+		it('should accept CONNECT request', function(done) {
 			proxy.start(function() {
 				var req = http.request({
 					host: '127.0.0.1'
 					, port: 10001
 					, method: 'CONNECT'
-					, path: 'www.google.com:443'
-				}, function(res) {
-					console.log('fire');
+					, path: 'localhost:443'
 				});
+
+				req.on('connect', function(res, socket, head) {
+					expect(res.statusCode).to.equal(200);
+					proxy.stop(function() {
+						done();
+					});
+				});
+
 				req.end();
 			});
 		});
