@@ -1,7 +1,7 @@
 {
   "name": "kneesocks",
   "version": "0.1.0",
-  "description": "Convert SOCKS proxy into HTTP proxy",
+  "description": "Put some nice SOCKS on your HTTP only program",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/test.js",
