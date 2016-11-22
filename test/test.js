@@ -18,15 +18,12 @@ describe('kneesocks', function() {
 
 	before(function(done) {
 		var server = Socks.createServer(function(info, accept, deny) {
-			var body = 'hello world';
 			var socket = accept(true);
 
 			if (info.dstPort == 80) {
 				socket.write('HTTP/1.1 200 OK\r\n');
 				socket.write('Connection: close\r\n');
 				socket.write('Content-Type: text/plain\r\n');
-				socket.write('Content-Length: ' + Buffer.byteLength(body) + '\r\n');
-				socket.write(body + '\r\n');
 				socket.write('\r\n');
 			}
 
