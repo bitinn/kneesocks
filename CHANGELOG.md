@@ -4,6 +4,10 @@ Changelog
 
 # 1.x release
 
+## v1.0.4
+
+- Fix: dependency and test cases
+
 ## v1.0.3
 
 - Enhance: raise agent.maxSockets to 20
