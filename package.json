@@ -1,6 +1,6 @@
 {
   "name": "kneesocks",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Put some nice SOCKS on your HTTP only program",
   "main": "index.js",
   "scripts": {
